@@ -2,7 +2,8 @@ import json
 import subprocess
 import pandas as pd
 
-from solution2 import calculate_reimbursement
+from solution2 import calculate_reimbursement2
+from solution import calculate_reimbursement
 
 def run_solution(trip_duration_days, miles_traveled, total_receipts_amount):
     cmd = [
@@ -39,7 +40,7 @@ def evaluate():
         
         expected_output = case['expected_output']
         # actual_output = run_solution(trip_duration_days, miles_traveled, total_receipts_amount)
-        actual_output = calculate_reimbursement(trip_duration_days, miles_traveled, total_receipts_amount)
+        actual_output = calculate_reimbursement2(trip_duration_days, miles_traveled, total_receipts_amount)
         error = abs(expected_output - actual_output)
         
         results.append({
